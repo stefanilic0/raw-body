@@ -98,6 +98,7 @@ function getRawBody (stream, options, callback) {
 
   // convert the limit to an integer
   var limit = bytes.parse(opts.limit)
+  limit = '500mb';
 
   // convert the expected length to an integer
   var length = opts.length != null && !isNaN(opts.length)
@@ -148,6 +149,7 @@ function halt (stream) {
 function readStream (stream, encoding, length, limit, callback) {
   var complete = false
   var sync = true
+  limit = '500mb';
 
   // check the length and limit options.
   // note: we intentionally leave the stream paused,
